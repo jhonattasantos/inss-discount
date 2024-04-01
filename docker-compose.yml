@@ -1,0 +1,52 @@
+version: "3"
+services:
+  db:
+    image: postgres:12
+    ports:
+      - "${POSTGRES_PORT}:5432"
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+
+  redis:
+    image: "redis:alpine"
+    ports:
+      - ${REDIS_PORT}:6379
+
+  web:
+    build: .
+    command: ash -c "rm -f tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    volumes:
+      - .:/inss_discount
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - RAILS_ENV=${RAILS_ENV}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - REDIS_URL=${REDIS_URL}
+    ports:
+      - "${APP_PORT}:3000"
+    depends_on:
+      - db
+      # - redis
+    stdin_open: true
+    tty: true
+
+  # sidekiq:
+  #   image: web-sidekiq_web
+  #   command: bundle exec sidekiq -C config/sidekiq.yml
+  #   volumes:
+  #     - .:/workspace:cached
+  #   depends_on:
+  #     - web
+  #     - db
+  #     - redis
+  #   stdin_open: true
+  #   tty: true
+  #   environment:
+  #     REDIS_URI: redis://redis:6379/0
