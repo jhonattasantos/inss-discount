@@ -19,6 +19,7 @@
         <th><%= I18n.t('employees.fields.name') %></th>
         <th><%= I18n.t('employees.fields.birthdate') %></th>
         <th><%= I18n.t('employees.fields.salary') %></th>
+        <th><%= I18n.t('employees.fields.inss_discount') %></th>
         <th><%= I18n.t('common.edit') %></th>
       </tr>
     </thead>
@@ -30,6 +31,7 @@
           <td><%= employee.name %></td>
           <td><%= employee.birthdate.strftime("%d/%m/%Y") %></td>
           <td>R$ <%= employee.salary %></td>
+          <td>R$ <%= employee.inss_discount %></td>
           <td><%= link_to I18n.t('common.edit'), edit_employee_path(employee) %></td>
         </tr>
       <% end %>
