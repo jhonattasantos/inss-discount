@@ -54,6 +54,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem "rubycritic", require: false
+  gem 'shoulda-matchers', '~> 6.0'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :development do

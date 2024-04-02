@@ -1,6 +1,6 @@
 class Employee < ApplicationRecord
   validates :name, :cpf, :salary, :inss_discount, presence: true
-  validates :cpf, uniqueness: true
+  validates :cpf, uniqueness: { case_sensitive: false }
   validates :salary, numericality: { greater_than: 0 }
   validates :inss_discount, numericality: { greater_than_or_equal_to: 0 }
 
