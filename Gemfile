@@ -76,3 +76,6 @@ end
 gem 'dartsass-sprockets'
 gem 'bootstrap', '~> 5.3.2'
 gem 'kaminari'
+
+gem 'sidekiq'
+gem 'sidekiq-failures'

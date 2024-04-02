@@ -37,6 +37,7 @@ class EmployeesController < ApplicationController
   def update
     respond_to do |format|
       if @employee.update(employee_params)
+        UpdateSalaryWorker.perform_async(@employee.id, employee_params[:salary])
         format.html { redirect_to employee_url(@employee), notice: 'Employee was successfully updated.' }
         format.json { render :show, status: :ok, location: @employee }
       else
