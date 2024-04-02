@@ -24,7 +24,7 @@ class EmployeesController < ApplicationController
 
     respond_to do |format|
       if @employee.save
-        format.html { redirect_to employee_url(@employee), notice: 'Employee was successfully created.' }
+        format.html { redirect_to employee_url(@employee), notice: I18n.t('employees.create.success') }
         format.json { render :show, status: :created, location: @employee }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +38,7 @@ class EmployeesController < ApplicationController
     respond_to do |format|
       if @employee.update(employee_params)
         UpdateSalaryWorker.perform_async(@employee.id, employee_params[:salary])
-        format.html { redirect_to employee_url(@employee), notice: 'Employee was successfully updated.' }
+        format.html { redirect_to employee_url(@employee), notice: I18n.t('employees.update.success') }
         format.json { render :show, status: :ok, location: @employee }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -52,7 +52,7 @@ class EmployeesController < ApplicationController
     @employee.destroy!
 
     respond_to do |format|
-      format.html { redirect_to employees_url, notice: 'Employee was successfully destroyed.' }
+      format.html { redirect_to employees_url, notice: I18n.t('employees.destroy.success') }
       format.json { head :no_content }
     end
   end

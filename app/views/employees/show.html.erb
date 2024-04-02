@@ -1,10 +1,18 @@
-<p style="color: green"><%= notice %></p>
+<% if notice.present? %>
+  <div class="alert alert-success" role="alert">
+    <%= notice %>
+  </div>
+<% end %>
 
 <%= render @employee %>
 
-<div>
-  <%= link_to "Edit this employee", edit_employee_path(@employee) %> |
-  <%= link_to "Back to employees", employees_path %>
+<div class="d-flex justify-content-between">
+  <%= link_to I18n.t('common.back'), employees_path %>
+  <%= link_to I18n.t('employees.edit.title'), edit_employee_path(@employee), class: "btn btn-primary" %>
+</div>
 
-  <%= button_to "Destroy this employee", @employee, method: :delete %>
+<hr>
+
+<div class="d-flex flex-row-reverse">
+  <%= button_to I18n.t('employees.destroy.title'), @employee, method: :delete, class: "btn btn-danger" %>
 </div>

@@ -1,0 +1,65 @@
+pt-BR:
+  views:
+    pagination:
+      first: "&laquo; Primeira"
+      last: "Última &raquo;"
+      previous: "&lsaquo; Anterior"
+      next: "Próxima &rsaquo;"
+      truncate: "..."
+  employees:
+    fields:
+      name: "Nome"
+      document: "CPF"
+      birthdate: "Data de Nascimento"
+      address: "Endereço"
+      city: "Cidade"
+      state: "Estado"
+      zip_code: "CEP"
+      neighborhood: "Bairro"
+      number: "Número"
+      personal_phone: "Telefone Pessoal"
+      reference_phone: "Telefone de Referência"
+      salary: "Salário"
+      inss_discount: "Desconto INSS"
+    index:
+      title: "Funcionários"
+      new: "Novo Funcionário"
+      edit: "Editar Funcionário"
+      destroy: "Excluir Funcionário"
+      show: "Visualizar Funcionário"
+    new:
+      title: "Novo Funcionário"
+      submit: "Salvar"
+    edit:
+      title: "Editar Funcionário"
+      submit: "Atualizar"
+    show:
+      title: "Visualizar Funcionário"
+    destroy:
+      title: "Excluir Funcionário"
+      confirm: "Você tem certeza que deseja excluir este funcionário?"
+    create:
+      success: "Funcionário criado com sucesso!"
+      error: "Erro ao criar funcionário!"
+    update:
+      success: "Funcionário atualizado com sucesso!"
+      error: "Erro ao atualizar funcionário!"
+
+  common:
+    save: "Salvar"
+    cancel: "Cancelar"
+    back: "Voltar"
+    edit: "Editar"
+    confirm: "Confirmar"
+    actions: "Ações"
+    no_records: "Nenhum registro encontrado"
+    confirm_destroy: "Você tem certeza que deseja excluir este registro?"
+    confirm_destroy_title: "Excluir Registro"
+    confirm_destroy_yes: "Sim"
+    confirm_destroy_no: "Não"
+    confirm_destroy_success: "Registro excluído com sucesso!"
+    confirm_destroy_error: "Erro ao excluir registro!"
+
+  errors:
+    messages:
+      prohibited_this_employee_from_being_saved: "não pôde ser salvo"

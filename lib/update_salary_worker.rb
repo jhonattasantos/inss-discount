@@ -5,6 +5,6 @@ class UpdateSalaryWorker
     employee = Employee.find(employee_id)
     inss_discount = InssCalculator.calculate(new_salary.to_f)
 
-    employee.update(salary: new_salary, inss_discount: inss_discount)
+    employee.update(salary: new_salary, inss_discount:)
   end
 end
