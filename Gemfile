@@ -47,7 +47,6 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
-  gem 'rubocop-rails', require: false
   gem 'byebug'
   gem 'rspec-rails', '~> 6.1.0'
   gem 'simplecov', require: false
@@ -57,6 +56,16 @@ group :development, :test do
   gem 'shoulda-matchers', '~> 6.0'
   gem 'database_cleaner'
   gem 'rails-controller-testing'
+
+  gem 'rubocop-rails', require: false
+  gem 'rubocop-rspec'
+  gem 'rubocop-performance'
+  gem 'rubocop-factory_bot'
+
+  # Security tools
+  gem 'brakeman'
+  gem 'bundler-audit'
+  gem 'ruby_audit'
 end
 
 group :development do

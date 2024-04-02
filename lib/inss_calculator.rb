@@ -16,6 +16,7 @@ class InssCalculator
   # Returns:
   #   The value of the INSS deduction, rounded to two decimal places.
   def self.calculate(salary)
+    salary = salary.to_f
     total_discount = 0.0
 
     INSS_RANGES.sort_by { |range| range[:rate] }.each do |range|
