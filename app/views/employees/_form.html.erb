@@ -30,12 +30,12 @@
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :salary, class: "form-label" %>
-      <%= form.text_field :salary, class: "form-control", required: true %>
+      <%= form.text_field :salary, class: "form-control money-mask", required: true %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :inss_discount, class: "form-label" %>
-      <%= form.text_field :inss_discount, class: "form-control", required: true %>
+      <%= form.text_field :inss_discount, class: "form-control money-mask", required: true %>
     </div>
   </div>
 
