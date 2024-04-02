@@ -30,12 +30,13 @@
   <div class="row mb-3">
     <div class="col-md-6">
       <%= form.label :salary, class: "form-label" %>
-      <%= form.text_field :salary, class: "form-control money-mask", required: true %>
+      <%= form.text_field :salary, class: "form-control", required: true %>
     </div>
 
     <div class="col-md-6">
       <%= form.label :inss_discount, class: "form-label" %>
-      <%= form.text_field :inss_discount, class: "form-control money-mask", required: true %>
+      <%= form.text_field :inss_discount_display, class: "form-control", required: true, disabled: true %>
+      <%= form.hidden_field :inss_discount, required: true %>
     </div>
   </div>
 
@@ -46,8 +47,8 @@
     </div>
 
     <div class="col-md-7">
-      <%= form.label :street, class: "form-label" %>
-      <%= form.text_field :street, class: "form-control", required: true %>
+      <%= form.label :address, class: "form-label" %>
+      <%= form.text_field :address, class: "form-control", required: true %>
     </div>
 
     <div class="col-md-2">
@@ -86,4 +87,8 @@
   <div class="mb-3">
     <%= form.submit "Salvar", class: "btn btn-primary" %>
   </div>
+<% end %>
+
+<% content_for :scripts do %>
+  <%= javascript_include_tag 'inss_calculation' %>
 <% end %>

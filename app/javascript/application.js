@@ -1,2 +1,3 @@
 // Configure your import map in config/importmap.rb. Read more: https://github.com/rails/importmap-rails
-import "bootsrap"
+import "popper"
+import "bootstrap"
