@@ -3,7 +3,7 @@ class EmployeesController < ApplicationController
 
   # GET /employees or /employees.json
   def index
-    @employees = Employee.all
+    @employees = Employee.page(params[:page] || 1)
   end
 
   # GET /employees/1 or /employees/1.json
@@ -65,6 +65,6 @@ class EmployeesController < ApplicationController
   # Only allow a list of trusted parameters through.
   def employee_params
     params.require(:employee).permit(:name, :cpf, :birthdate, :address, :city, :state, :zip_code, :personal_phone,
-                                     :reference_phone, :salary, :inss_discount)
+                                     :reference_phone, :salary, :inss_discount, :neighborhood, :number)
   end
 end

@@ -3,12 +3,32 @@
 <h1>Employees</h1>
 
 <div id="employees">
-  <% @employees.each do |employee| %>
-    <%= render employee %>
-    <p>
-      <%= link_to "Show this employee", employee %>
-    </p>
-  <% end %>
+  <table class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Cpf</th>
+        <th>Name</th>
+        <th>BirthDate</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @employees.each do |employee| %>
+        <tr>
+          <td><%= employee.id %></td>
+          <td><%= employee.cpf %></td>
+          <td><%= link_to employee.name, employee %></td>
+          <td><%= employee.birthdate %></td>
+          <td><%= employee.salary %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <div class="pagination-container">
+    <%= paginate @employees, window: 2 %>
+  </div>
 </div>
 
 <%= link_to "New employee", new_employee_path %>
