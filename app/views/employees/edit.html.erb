@@ -1,0 +1,10 @@
+<h1><%= I18n.t('employees.edit.title') %></h1>
+
+<%= render "form", employee: @employee %>
+
+<br>
+
+<div class="d-flex justify-content-between">
+  <%= link_to I18n.t('employees.index.title'), employees_path %>
+  <%= link_to I18n.t('employees.index.show'), @employee %>
+</div>

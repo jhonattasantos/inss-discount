@@ -1,15 +1,31 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Credishop</title>
+    <title>Desconto INSS</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <%= javascript_importmap_tags %>
   </head>
 
   <body>
-    <%= yield %>
+    <%= render "partials/navbar" %>
+    <div class="container">
+      <%= yield %>
+    </div>
+
+    <script>
+      $(document).ready(function() {
+        $('.cpf-mask').mask('000.000.000-00', {reverse: true});
+        $('.phone-mask').mask('(00) 00000-0000');
+        $('.cep-mask').mask('00000-000');
+        $('.money-mask').mask('R$ 0.000.000,00', {reverse: true});
+      });
+    </script>
+    <%= yield :scripts %>
   </body>
 </html>

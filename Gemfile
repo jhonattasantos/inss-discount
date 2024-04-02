@@ -54,6 +54,9 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem "rubycritic", require: false
+  gem 'shoulda-matchers', '~> 6.0'
+  gem 'database_cleaner'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -72,3 +75,10 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem 'dartsass-sprockets'
+gem 'bootstrap', '~> 5.3.2'
+gem 'kaminari'
+
+gem 'sidekiq'
+gem 'sidekiq-failures'

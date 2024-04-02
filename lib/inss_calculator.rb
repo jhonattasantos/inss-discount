@@ -18,7 +18,7 @@ class InssCalculator
   def self.calculate(salary)
     total_discount = 0.0
 
-    INSS_RANGES.each do |range|
+    INSS_RANGES.sort_by { |range| range[:rate] }.each do |range|
       max_salary = range[:max_salary]
       min_salary = range[:min_salary]
       rate = range[:rate]

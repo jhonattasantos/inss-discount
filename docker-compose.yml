@@ -33,20 +33,26 @@ services:
       - "${APP_PORT}:3000"
     depends_on:
       - db
-      # - redis
+      - redis
     stdin_open: true
     tty: true
 
-  # sidekiq:
-  #   image: web-sidekiq_web
-  #   command: bundle exec sidekiq -C config/sidekiq.yml
-  #   volumes:
-  #     - .:/workspace:cached
-  #   depends_on:
-  #     - web
-  #     - db
-  #     - redis
-  #   stdin_open: true
-  #   tty: true
-  #   environment:
-  #     REDIS_URI: redis://redis:6379/0
+  sidekiq:
+    build: .
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    volumes:
+      - .:/workspace:cached
+    depends_on:
+      - web
+      - db
+      - redis
+    stdin_open: true
+    tty: true
+    environment:
+      - POSTGRES_DB=${POSTGRES_DB}
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_PORT=${POSTGRES_PORT}
+      - RAILS_ENV=${RAILS_ENV}
+      - POSTGRES_HOST=${POSTGRES_HOST}
+      - REDIS_URL=${REDIS_URL}
