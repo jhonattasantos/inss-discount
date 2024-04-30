@@ -40,7 +40,7 @@ $ docker compose up
 - [x] Cálculo do desconto do INSS 👍
 - [x] Requisição Ajax para calcular o desconto 👍
 - [x] Atualização do salário utilizando Fila (sidekiq) 👍
-- [ ] Relatório agrupando funcionários por faixas salariais 👎
+- [x] Relatório agrupando funcionários por faixas salariais 👎
 
 ## Informações adicionais
 
