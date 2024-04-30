@@ -56,11 +56,15 @@ Aguarde todos os testes serem concluídos e, em seguida, verifique o arquivo:
 coverage/index.html
 ```
 
+![coverage](public/img/coverage.png)
+
 #### Qualidade de código
 
 Esta aplicação é analisada quanto à qualidade de código, você pode verificar com:
 - rubocop
 - rubycritic
+
+![rubycritic](public/img/rubycritic.png)
 
 #### Ferramentas de segurança de código
 
