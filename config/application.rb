@@ -26,5 +26,7 @@ module Credishop
     config.active_job.queue_adapter = :sidekiq
     config.time_zone = 'America/Sao_Paulo'
     config.i18n.default_locale = :'pt-BR'
+
+    config.cache_store = :redis_cache_store, { url: ENV['REDIS_URL'] }
   end
 end

@@ -9,7 +9,7 @@ FactoryBot.define do
     zip_code { Faker::Address.zip_code }
     personal_phone { Faker::PhoneNumber.cell_phone }
     reference_phone { Faker::PhoneNumber.cell_phone }
-    salary { Faker::Number.between(from: 1000, to: 10_000) }
+    salary { Faker::Number.between(from: 500, to: 6_101) }
     inss_discount { InssCalculator.calculate(salary) }
   end
 end
