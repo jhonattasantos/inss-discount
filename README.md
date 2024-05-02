@@ -54,6 +54,8 @@ Para se autenticar na aplicação, você pode seguir os seguintes passos:
 4. Clique no botão "Entrar" para enviar as informações de login.
 5. Se as credenciais estiverem corretas, você será redirecionado para a página inicial da aplicação.
 
+![login_page](public/img/login_page.png)
+
 ## Informações adicionais
 
 #### Cobertura de testes (Rspec)
