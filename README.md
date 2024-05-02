@@ -4,6 +4,17 @@ Desafio Técnico Ruby on Rails
 
 Aplicação com Testes, Qualidade e Segurança de Código e Integração Contínua
 
+## ⚙️ Objetivos
+
+- [x] Docker 👍
+- [x] Autenticação (desejável) 👍
+- [x] Iniciar com pelo menos 10 registros (seed); 👍
+- [x] Listagem dos Funcionários exibindo apenas 5 resultados por página 👍
+- [x] Cálculo do desconto do INSS 👍
+- [x] Requisição Ajax para calcular o desconto 👍
+- [x] Atualização do salário utilizando Fila (sidekiq) 👍
+- [x] Relatório agrupando funcionários por faixas salariais 👍
+
 ### Pré-requisitos
 
 Antes de começar, certifique-se de ter as seguintes ferramentas instaladas e configuradas corretamente em sua máquina:
@@ -32,15 +43,18 @@ $ docker compose up
 # OBS: Se desejar alterar a porta padrão, edite o arquivo .env
 
 ```
----
 
-## ⚙️ Objetivos
+## Autenticação
 
-- [x] CRUD de Funcionários 👍
-- [x] Cálculo do desconto do INSS 👍
-- [x] Requisição Ajax para calcular o desconto 👍
-- [x] Atualização do salário utilizando Fila (sidekiq) 👍
-- [x] Relatório agrupando funcionários por faixas salariais 👎
+Para se autenticar na aplicação, você pode seguir os seguintes passos:
+
+1. Acesse a página de login da aplicação (http://localhost:3000).
+2. Insira o email: username@credishop.com
+3. Insira a senha: 123456
+4. Clique no botão "Entrar" para enviar as informações de login.
+5. Se as credenciais estiverem corretas, você será redirecionado para a página inicial da aplicação.
+
+![login_page](public/img/login_page.png)
 
 ## Informações adicionais
 

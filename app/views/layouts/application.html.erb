@@ -14,10 +14,17 @@
   </head>
 
   <body>
-    <%= render "partials/navbar" %>
-    <div class="container">
-      <%= yield %>
-    </div>
+    <% if user_signed_in? %>
+      <%= render "partials/navbar" %>
+      <div class="container">
+        <%= yield %>
+      </div>
+    <% else %>
+      <div class="container vh-100">
+        <%= yield %>
+      <div>
+    <% end %>
+
     <script>
       $(document).ready(function() {
         $('.cpf-mask').mask('000.000.000-00', {reverse: true});

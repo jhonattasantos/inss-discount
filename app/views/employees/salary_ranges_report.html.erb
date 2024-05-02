@@ -1,0 +1,21 @@
+<div>
+    <h1>Relatório dos funcionários</h1>
+    <%= pie_chart @salary_ranges_report %>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+            <th>Faixa Salarial</th>
+            <th>Número de Pessoas</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% @salary_ranges_report.each do |faixa, numero_pessoas| %>
+                <tr>
+                    <td><%= faixa %></td>
+                    <td><%= numero_pessoas %></td>
+                </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>

@@ -119,4 +119,11 @@ RSpec.describe EmployeesController, type: :controller do
       expect(response.body).to eq({ inss_discount: 281.62 }.to_json)
     end
   end
+
+  describe 'GET #salary_ranges_report'  do
+    it 'assigns @salary_ranges_report' do
+      get :salary_ranges_report
+      expect(assigns(:salary_ranges_report)).to be_a(Hash)
+    end
+  end
 end

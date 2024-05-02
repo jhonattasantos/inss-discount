@@ -1,6 +1,7 @@
 class EmployeesController < ApplicationController
   before_action :set_employee, only: %i[show edit update destroy]
   skip_before_action :verify_authenticity_token, only: :calculate_contribution
+  before_action :authenticate_user!
 
   # GET /employees or /employees.json
   def index
@@ -61,6 +62,10 @@ class EmployeesController < ApplicationController
     salary = params[:salary].to_f
     inss_discount = InssCalculator.calculate(salary)
     render json: { inss_discount: }
+  end
+
+  def salary_ranges_report
+    @salary_ranges_report = Employee.salary_ranges_report
   end
 
   private

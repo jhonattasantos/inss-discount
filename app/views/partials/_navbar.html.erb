@@ -7,9 +7,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <%= link_to I18n.t('employees.index.title'), employees_path, class: "nav-link active", "aria-current" => "page" %>
+          <%= link_to I18n.t('navbar.employees'), employees_path, class: "nav-link active", "aria-current" => "page" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to I18n.t('navbar.reports'), salary_ranges_report_path, class: "nav-link active", "aria-current" => "page" %>
         </li>
       </ul>
+      <%= form_tag(destroy_user_session_path, method: :delete) do %>
+        <%= submit_tag I18n.t('navbar.logout'), class: "nav-link active" %>
+      <% end %>
     </div>
   </div>
 </nav>
