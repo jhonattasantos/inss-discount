@@ -93,3 +93,5 @@ gem 'sidekiq'
 gem 'sidekiq-failures'
 
 gem 'chartkick'
+
+gem 'devise'
