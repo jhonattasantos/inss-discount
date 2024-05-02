@@ -18,6 +18,8 @@ SimpleCov.start 'rails' do
   add_filter '/app/jobs/'
   add_filter '/app/mailers/'
   add_filter '/app/helpers/'
+  add_filter 'app/models/application_record.rb'
+  add_filter 'app/controllers/application_controller.rb'
 end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -43,6 +45,15 @@ rescue ActiveRecord::PendingMigrationError => e
   abort e.to_s.strip
 end
 RSpec.configure do |config|
+
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  config.include Devise::Test::ControllerHelpers, type: :view
+
+  config.before(:each, type: :controller) do
+    allow(controller).to receive(:authenticate_user!).and_return(true)
+    allow(controller).to receive(:current_user).and_return(nil)
+  end
+
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   config.fixture_paths = [
     Rails.root.join('spec/fixtures')
