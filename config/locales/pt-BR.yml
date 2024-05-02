@@ -45,6 +45,18 @@ pt-BR:
       success: "Funcionário atualizado com sucesso!"
       error: "Erro ao atualizar funcionário!"
 
+  login:
+    title: "Entre para continuar"
+    email: "Email"
+    password: "Senha"
+    remember_me: "Lembrar-me"
+    submit: "Entrar"
+    forgot_password: "Esqueceu sua senha?"
+    register: "Registrar-se"
+    invalid: "Email ou senha inválidos"
+    success: "Login efetuado com sucesso!"
+    logout: "Logout efetuado com sucesso!"
+
   common:
     save: "Salvar"
     cancel: "Cancelar"
